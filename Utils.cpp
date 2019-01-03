@@ -10,13 +10,13 @@
 using namespace std;
 
 // Returns true if pattern was found in string
-bool Utils::regexMatch(const string &search, const string &reg_expression) {
+bool Utils::regex_match(const string &search, const string &reg_expression) {
     regex reg(reg_expression);
     return regex_search(search, reg);
 }
 
-void Utils::readValidateLength(string &destination, const string &stdPrompt,
-        const string &errPrompt, const int &maxLen) {
+void Utils::read_validate_length(string &destination, const string &stdPrompt,
+                                 const string &errPrompt, const int &maxLen) {
     bool error = false;
     do {
         if (error)
@@ -27,18 +27,18 @@ void Utils::readValidateLength(string &destination, const string &stdPrompt,
     } while (error);
 }
 
-void Utils::readValidateLengthRegex(string &destination, const string &std_prompt, const string &err_prompt,
-        const int &max_len, const string &reg_expression) {
+void Utils::read_validate_length_regex(string &destination, const string &std_prompt, const string &err_prompt,
+                                       const int &max_len, const string &reg_expression) {
     bool err = false;
     do {
         if (err)
             cout << err_prompt << endl;
-        Utils::readValidateLength(destination, std_prompt, err_prompt, max_len);
-        err = !Utils::regexMatch(destination, reg_expression);
+        Utils::read_validate_length(destination, std_prompt, err_prompt, max_len);
+        err = !Utils::regex_match(destination, reg_expression);
     } while (err);
 
 }
 
-bool Utils::isValidMark(const float &i) {
+bool Utils::is_valid_mark(const float &i) {
     return i == 2 || i == 3 || i == 3.5 || i == 4 || i == 4.5 || i == 5;
 }

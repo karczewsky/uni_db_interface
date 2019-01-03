@@ -62,11 +62,11 @@ Module Module::get_by_id(const int &id) {
 }
 
 Module Module::read_properties_from_input(Module m = Module()) {
-    Utils::readValidateLength(m.name, "Podaj nazwe modulu: ", "Bledna nazwa modulu.", 40);
+    Utils::read_validate_length(m.name, "Podaj nazwe modulu: ", "Bledna nazwa modulu.", 40);
 
     bool err = false;
     do {
-        m.ects = Utils::getNumFromUser<int>("Podaj ilosc ECTS: ");
+        m.ects = Utils::get_num_from_user<int>("Podaj ilosc ECTS: ");
         if (err)
             cout << "Ilosc ECTS nie moze byc niedodatnia" << endl;
         err = m.ects < 0;
@@ -100,7 +100,7 @@ void Module::print_all_modules() {
 }
 
 void Module::module_menu() {
-    int id = Utils::getNumFromUser<int>("Podaj identyfikator modulu: ");
+    int id = Utils::get_num_from_user<int>("Podaj identyfikator modulu: ");
     Module m;
 
     try {

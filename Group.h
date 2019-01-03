@@ -31,8 +31,8 @@ public:
     static void create_new_group_from_input();
     static void group_menu();
     static void print_all_groups();
-    int getId();
-    string getName();
+    int get_id();
+    string get_name();
 };
 
 

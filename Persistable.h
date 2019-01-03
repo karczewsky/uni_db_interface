@@ -7,7 +7,7 @@
 
 
 class Persistable {
-public:
+protected:
     virtual void insert_db() = 0;
     virtual void update_db() = 0;
     virtual void remove_db() = 0;

@@ -33,7 +33,7 @@ void Group::print() {
 }
 
 Group Group::read_properties_from_input(Group g = Group()) {
-    Utils::readValidateLength(g.name, "Podaj nazwe grupy: ", "Nieprawidlowa nazwa grupy.", 10);
+    Utils::read_validate_length(g.name, "Podaj nazwe grupy: ", "Nieprawidlowa nazwa grupy.", 10);
     return g;
 }
 
@@ -175,8 +175,8 @@ void Group::add_group_module() {
     }
     cout << endl;
 
-    int teacher_id = Utils::getNumFromUser<int>("Podaj id prowadzacego: ");
-    int module_id = Utils::getNumFromUser<int>("Podaj id przedmiotu: ");
+    int teacher_id = Utils::get_num_from_user<int>("Podaj id prowadzacego: ");
+    int module_id = Utils::get_num_from_user<int>("Podaj id przedmiotu: ");
 
     res = txn.exec("SELECT teacher_id, module_id FROM qualified "
                        "WHERE teacher_id=" + txn.quote(teacher_id) +
@@ -222,8 +222,8 @@ void Group::remove_group_module() {
     }
     cout << endl;
 
-    int teacher_id = Utils::getNumFromUser<int>("Podaj id prowadzacego: ");
-    int module_id = Utils::getNumFromUser<int>("Podaj id przedmiotu: ");
+    int teacher_id = Utils::get_num_from_user<int>("Podaj id prowadzacego: ");
+    int module_id = Utils::get_num_from_user<int>("Podaj id przedmiotu: ");
     res = txn.exec("SELECT * FROM group_module "
                    "WHERE teacher_id=" + txn.quote(teacher_id) +
                    " AND module_id=" + txn.quote(module_id)+" AND group_id="+txn.quote(this->id));
@@ -255,11 +255,11 @@ void Group::print_all_groups() {
     }
 }
 
-int Group::getId() {
+int Group::get_id() {
     return this->id;
 }
 
-string Group::getName() {
+string Group::get_name() {
     return this->name;
 }
 

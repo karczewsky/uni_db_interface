@@ -30,11 +30,39 @@ Teacher.h
 Module.h
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Module.h
 
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Group.cpp
+Group.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Group.h
+Db.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Db.h
+Utils.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Utils.h
+pqxx/pqxx
+-
+iostream
+-
+iomanip
+-
+
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Group.h
 string
 -
 Persistable.h
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Persistable.h
+
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Module.cpp
+iostream
+-
+pqxx/pqxx
+-
+iomanip
+-
+Module.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Module.h
+Db.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Db.h
+Utils.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Utils.h
 
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Module.h
 string
@@ -43,12 +71,6 @@ Persistable.h
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Persistable.h
 
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Persistable.h
-
-/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Person.cpp
-iostream
--
-Person.h
-/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Person.h
 
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Person.h
 string

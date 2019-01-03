@@ -73,13 +73,13 @@ Teacher Teacher::get_by_id(const int &id) {
 }
 
 Teacher Teacher::read_properties_from_input(Teacher t = Teacher()) {
-    Utils::readValidateLength(t.first_name, "Podaj imie: ", "Bledne imie.", 40);
-    Utils::readValidateLength(t.last_name, "Podaj nazwisko: ", "Bladne nazwisko.", 50);
-    Utils::readValidateLength(t.city, "Podaj miasto: ", "Bledne miasto.", 30);
-    Utils::readValidateLength(t.street, "Podaj ulice: ", "Bledna ulica.", 50);
-    Utils::readValidateLengthRegex(t.postal_code, "Podaj kod: ", "Bledny kod pocztowy.", 6, R"(\b\d{2}-\d{3}\b)");
-    Utils::readValidateLengthRegex(t.email, "Podaj email: ", "Bledny email.", 50,
-                                   R"(\b[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\.[A-Za-z]{2,4}\b)");
+    Utils::read_validate_length(t.first_name, "Podaj imie: ", "Bledne imie.", 40);
+    Utils::read_validate_length(t.last_name, "Podaj nazwisko: ", "Bladne nazwisko.", 50);
+    Utils::read_validate_length(t.city, "Podaj miasto: ", "Bledne miasto.", 30);
+    Utils::read_validate_length(t.street, "Podaj ulice: ", "Bledna ulica.", 50);
+    Utils::read_validate_length_regex(t.postal_code, "Podaj kod: ", "Bledny kod pocztowy.", 6, R"(\b\d{2}-\d{3}\b)");
+    Utils::read_validate_length_regex(t.email, "Podaj email: ", "Bledny email.", 50,
+                                      R"(\b[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\.[A-Za-z]{2,4}\b)");
 
     return t;
 }
@@ -132,7 +132,7 @@ void Teacher::print_qualifications() {
 }
 
 void Teacher::add_qualification() {
-    int id = Utils::getNumFromUser<int>("Podaj id przedmiotu, ktory moze prowadzic prowadzacy: ");
+    int id = Utils::get_num_from_user<int>("Podaj id przedmiotu, ktory moze prowadzic prowadzacy: ");
     Module m;
 
     try {
@@ -156,7 +156,7 @@ void Teacher::add_qualification() {
 }
 
 void Teacher::remove_qualification() {
-    int id = Utils::getNumFromUser<int>("Podaj id przedmiotu, ktory prowadzacy nie bedzie juz uczyl: ");
+    int id = Utils::get_num_from_user<int>("Podaj id przedmiotu, ktory prowadzacy nie bedzie juz uczyl: ");
     Module m;
 
     try {
@@ -174,7 +174,7 @@ void Teacher::remove_qualification() {
 }
 
 void Teacher::teacher_menu() {
-    int id = Utils::getNumFromUser<int>("Podaj identyfikator prowadzacego: ");
+    int id = Utils::get_num_from_user<int>("Podaj identyfikator prowadzacego: ");
     Teacher t;
 
     try {
@@ -274,14 +274,14 @@ void Teacher::grades_menu() {
         cout << endl;
     }
 
-    int module_id = Utils::getNumFromUser<int>("Podaj nr modulu: ");
-    int album_no = Utils::getNumFromUser<int>("Podaj nr albumu: ");
+    int module_id = Utils::get_num_from_user<int>("Podaj nr modulu: ");
+    int album_no = Utils::get_num_from_user<int>("Podaj nr albumu: ");
     float mark;
 
     bool err = false;
     do {
-        mark = Utils::getNumFromUser<float>("Podaj ocene: ");
-        err = !Utils::isValidMark(mark);
+        mark = Utils::get_num_from_user<float>("Podaj ocene: ");
+        err = !Utils::is_valid_mark(mark);
         if (err)
             cout << "Zla wartosc oceny." << endl;
     } while (err);

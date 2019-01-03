@@ -13,15 +13,15 @@ using namespace std;
 class Utils {
 public:
     // true if regex matched
-    static bool regexMatch(const string &search, const string &reg_expression);
+    static bool regex_match(const string &search, const string &reg_expression);
     // true if read succesfully
-    static void readValidateLength(string &destination, const string &stdPrompt, const string &errPrompt,
-            const int &maxLen);
-    static void readValidateLengthRegex(string &destination, const string &std_prompt, const string &err_prompt,
-            const int &max_len, const string &reg_expression);
-    static bool isValidMark(const float &i);
+    static void read_validate_length(string &destination, const string &stdPrompt, const string &errPrompt,
+                                     const int &maxLen);
+    static void read_validate_length_regex(string &destination, const string &std_prompt, const string &err_prompt,
+                                           const int &max_len, const string &reg_expression);
+    static bool is_valid_mark(const float &i);
     template <class T>
-    static T getNumFromUser(const string &stdPrompt, const string &errPrompt = "Podaj poprawny numer.") {
+    static T get_num_from_user(const string &stdPrompt, const string &errPrompt = "Podaj poprawny numer.") {
         T num;
         bool err = false;
         do {

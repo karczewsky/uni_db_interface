@@ -15,7 +15,7 @@ void Student::insert_db() {
     pqxx::result res = txn.exec("INSERT INTO student(first_name, last_name, city, street, postal_code, email, group_id)"
                                 "VALUES("+txn.quote(this->first_name)+","+txn.quote(this->last_name)+","+
                                 txn.quote(this->city)+","+txn.quote(this->street)+","+txn.quote(this->postal_code)+","+
-                                txn.quote(this->email)+","+txn.quote(this->group.getId())+") RETURNING album_no");
+                                txn.quote(this->email)+","+txn.quote(this->group.get_id())+") RETURNING album_no");
     txn.commit();
     this->album_no = res[0][0].as<int>();
 }
@@ -25,7 +25,7 @@ void Student::update_db() {
     txn.exec("UPDATE student SET first_name = " + txn.quote(this->first_name) +
              " ,last_name = " + txn.quote(this->last_name) + " ,city = " + txn.quote(this->city) +
              " ,street = " + txn.quote(this->street) + " ,postal_code = " + txn.quote(this->postal_code) +
-             " ,email = "+txn.quote(this->email) + " ,group_id = " + txn.quote(this->group.getId()) +
+             " ,email = "+txn.quote(this->email) + " ,group_id = " + txn.quote(this->group.get_id()) +
              " WHERE album_no = " + txn.quote(this->album_no));
     txn.commit();
 }
@@ -46,7 +46,7 @@ void Student::print() {
     cout
     << "==================" << endl
     << "Student: " << this->first_name << " " << this->last_name << endl
-    << "Grupa: " << this->group.getName() << endl
+    << "Grupa: " << this->group.get_name() << endl
     << "Numer albumu: " << this->album_no << endl
     << "Adres: " << this->street << ", " << this->city << " " << this->postal_code << endl
     << "E-mail: " << this->email << endl
@@ -125,8 +125,8 @@ Student Student::read_properties_from_input(Student s = Student()) {
     bool loop = true;
     while (loop) {
         try {
-            Utils::readValidateLength(group_s, "Podaj nazwe grupy do ktorej nalezy student: ",
-                    "Niepoprana nazwa grupy: ", 10);
+            Utils::read_validate_length(group_s, "Podaj nazwe grupy do ktorej nalezy student: ",
+                                        "Niepoprana nazwa grupy: ", 10);
             s.group = Group::get_by_name(group_s);
             loop = false;
         } catch(...) {
@@ -134,13 +134,13 @@ Student Student::read_properties_from_input(Student s = Student()) {
         }
     }
 
-    Utils::readValidateLength(s.first_name, "Podaj imie: ", "Bledne imie.", 40);
-    Utils::readValidateLength(s.last_name, "Podaj nazwisko: ", "Bladne nazwisko.", 50);
-    Utils::readValidateLength(s.city, "Podaj miasto: ", "Bledne miasto.", 30);
-    Utils::readValidateLength(s.street, "Podaj ulice: ", "Bledna ulica.", 50);
-    Utils::readValidateLengthRegex(s.postal_code, "Podaj kod: ", "Bledny kod pocztowy.", 6, R"(\b\d{2}-\d{3}\b)");
-    Utils::readValidateLengthRegex(s.email, "Podaj email: ", "Bledny email.", 50,
-            R"(\b[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\.[A-Za-z]{2,4}\b)");
+    Utils::read_validate_length(s.first_name, "Podaj imie: ", "Bledne imie.", 40);
+    Utils::read_validate_length(s.last_name, "Podaj nazwisko: ", "Bladne nazwisko.", 50);
+    Utils::read_validate_length(s.city, "Podaj miasto: ", "Bledne miasto.", 30);
+    Utils::read_validate_length(s.street, "Podaj ulice: ", "Bledna ulica.", 50);
+    Utils::read_validate_length_regex(s.postal_code, "Podaj kod: ", "Bledny kod pocztowy.", 6, R"(\b\d{2}-\d{3}\b)");
+    Utils::read_validate_length_regex(s.email, "Podaj email: ", "Bledny email.", 50,
+                                      R"(\b[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\.[A-Za-z]{2,4}\b)");
 
     return s;
 }
@@ -176,7 +176,7 @@ void Student::print_all_students() {
 }
 
 void Student::student_menu() {
-    int album_no = Utils::getNumFromUser<int>("Podaj nr albumu studenta: ");
+    int album_no = Utils::get_num_from_user<int>("Podaj nr albumu studenta: ");
     Student s;
 
     try {
