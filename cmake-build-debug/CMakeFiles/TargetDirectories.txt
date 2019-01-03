@@ -1,0 +1,3 @@
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/cmake-build-debug/CMakeFiles/Dziekanat.dir
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/cmake-build-debug/CMakeFiles/edit_cache.dir
