@@ -12,6 +12,16 @@ string
 pqxx/pqxx
 -
 
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Grade.cpp
+iostream
+-
+pqxx/pqxx
+-
+Grade.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Grade.h
+Db.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Db.h
+
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Grade.h
 Student.h
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Student.h
@@ -34,9 +44,31 @@ Persistable.h
 
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Persistable.h
 
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Person.cpp
+iostream
+-
+Person.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Person.h
+
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Person.h
 string
 -
+
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Student.cpp
+iostream
+-
+pqxx/pqxx
+-
+iomanip
+-
+Student.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Student.h
+Group.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Group.h
+Utils.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Utils.h
+Db.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Db.h
 
 /home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Student.h
 Person.h
@@ -75,4 +107,18 @@ string
 -
 iostream
 -
+
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/main.cpp
+iostream
+-
+Student.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Student.h
+Group.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Group.h
+Teacher.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Teacher.h
+Utils.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Utils.h
+Module.h
+/home/jakub/WAT/Programowanie_obiektowe/Dziekanat/Module.h
 

@@ -18,8 +18,6 @@ protected:
     string postal_code;
     string email;
     Person();
-    Person(const string &first_name, const string &last_name, const string &city, const string &street,
-           const string &postal_code, const string &email);
 };
 
 
